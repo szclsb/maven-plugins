@@ -9,8 +9,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import static java.lang.StringTemplate.STR;
-
 public abstract class AbstractProcessMojo extends AbstractMojo {
     @Parameter(property = "workingDirectory", required = true)
     private File workingDirectory;
@@ -42,7 +40,7 @@ public abstract class AbstractProcessMojo extends AbstractMojo {
             for (var commandLine : lines) {
                 var exitCode = runCommand(commandLine.command);
                 if (exitCode != 0) {
-                    throw new MojoExecutionException(STR."Command finished with exit code \{exitCode}");
+                    throw new MojoExecutionException("Command finished with exit code " + exitCode);
                 }
             }
         } catch (IOException | InterruptedException e) {
