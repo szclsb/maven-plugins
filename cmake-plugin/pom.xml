@@ -10,6 +10,7 @@
     </parent>
 
     <artifactId>cmake-plugin</artifactId>
+    <packaging>maven-plugin</packaging>
 
     <dependencies>
         <dependency>
@@ -26,8 +27,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-plugin-plugin</artifactId>
-                <version>3.9.0</version>
             </plugin>
         </plugins>
     </build>
